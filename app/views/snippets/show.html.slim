@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @snippet.title
+p
+  strong Language:
+  = @snippet.language
+p
+  strong Contents:
+  = @snippet.contents
+
+=> link_to 'Edit', edit_snippet_path(@snippet)
+'|
+=< link_to 'Back', snippets_path

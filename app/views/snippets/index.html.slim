@@ -1,0 +1,25 @@
+h1 Listing snippets
+
+table
+  thead
+    tr
+      th Title
+      th Language
+      th Contents
+      th
+      th
+      th
+
+  tbody
+    - @snippets.each do |snippet|
+      tr
+        td = snippet.title
+        td = snippet.language
+        td = snippet.contents
+        td = link_to 'Show', snippet
+        td = link_to 'Edit', edit_snippet_path(snippet)
+        td = link_to 'Destroy', snippet, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Snippet', new_snippet_path

@@ -1,0 +1,18 @@
+= form_for @snippet do |f|
+  - if @snippet.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@snippet.errors.count, "error")} prohibited this snippet from being saved:"
+      ul
+        - @snippet.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :language
+    = f.text_field :language
+  .field
+    = f.label :contents
+    = f.text_field :contents
+  .actions = f.submit
